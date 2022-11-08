@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Loan Calculator</title>
+</head>
+<body class="bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="card card-body text-center mt-5">
+                    <div class="card-header">
+                        <h1 class="heading display-5 pb-3 text-dark">Loan Calculator</h1>
+                    </div>
+                    <form id="loan-form">
+                        <div class="form-group mt-3">
+                            <div class="input-group">
+                                <span class="input-group-text">£</span>
+                                <input type="number" name="" id="amount" class="form-control" placeholder="Loan Amount">
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <div class="input-group">
+                                <span class="input-group-text">%</span>
+                                <input type="number" name="" id="interest" class="form-control" placeholder="Percentage Interest">
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                                <input type="number" name="" id="years" class="form-control" placeholder="Number of Years">
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="submit" value="Calculate" class="btn btn-success btn-lg btn-block">
+                        </div>
+                    </form>
+                    <!-- Loader -->
+                    <!-- Results -->
+                </div>
+            </div>
+        </div>
+    </div> 
+</body>
+<script src="app.js"></script>
+</html>
