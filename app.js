@@ -6,6 +6,7 @@ const interestInput = document.querySelector('#interest');
 const calculateBtn = document.querySelector('#calculate');
 
 // Results UI
+const results = document.querySelector('#results');
 const monthlyRepaymentsDisplay = document.querySelector('#monthlyRepayments');
 const totalInterestDisplay = document.querySelector('#totalInterest');
 const totalPaymentDisplay = document.querySelector('#totalRepayment')
@@ -14,11 +15,19 @@ const totalPaymentDisplay = document.querySelector('#totalRepayment')
 const loading = document.querySelector('#loading');
 
 // Listen for Submit on Load form
-loanForm.addEventListener('submit', calculateResults)
+loanForm.addEventListener('submit', (e)=>{
+
+    // show loader
+    loading.classList.remove('d-none');
+
+    setTimeout(calculateResults, 2000);
+
+
+    e.preventDefault(); 
+})
 
 function calculateResults(e) {
-    console.log(e.target);
-    
+
     const principal = parseFloat(amountInput.value);
     const calculatedInterest = parseFloat(interestInput.value) / 100 / 12;
     const calculatedPayments = parseFloat(yearsInput.value) * 12; 
@@ -30,18 +39,14 @@ function calculateResults(e) {
     if (isFinite(monthly)) {
       monthlyRepaymentsDisplay.value = monthly.toFixed(2);
       totalPaymentDisplay.value = (monthly * calculatedPayments).toFixed(2); 
-      totalInterestDisplay.value = ((monthly*calculatedPayments) - principal).toFixed(2); 
-        
+      totalInterestDisplay.value = ((monthly*calculatedPayments) - principal).toFixed(2);
+      loading.classList.add('d-none');
+      results.classList.remove('d-none'); 
+           
     } else {
-
         showError(); 
-
     }
 
-    e.preventDefault(); 
-
-    
-    
 }
 
 
