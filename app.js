@@ -16,12 +16,13 @@ const loading = document.querySelector('#loading');
 
 // Listen for Submit on Load form
 loanForm.addEventListener('submit', (e)=>{
+    // Hide results 
+    results.classList.add('d-none'); 
 
     // show loader
     loading.classList.remove('d-none');
 
     setTimeout(calculateResults, 2000);
-
 
     e.preventDefault(); 
 })
@@ -44,6 +45,7 @@ function calculateResults(e) {
       results.classList.remove('d-none'); 
            
     } else {
+        loading.classList.add('d-none');
         showError(); 
     }
 
